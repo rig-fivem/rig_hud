@@ -52,12 +52,32 @@ RegisterNetEvent("rig_hud:client:toggle_display", function(state)
     else
         hud_active = false
         _nui.hide_status_hud()
+        _nui.hide_weapon_hud()
     end
 end)
 
 RegisterNetEvent("rig_hud:client:update", function()
     if hud_active then
         _nui.update_status_hud(build_hud_payload())
+    end
+end)
+
+RegisterNetEvent("rig_hud:client:weapon_state_changed", function(is_equipped, weapon_data)
+    local weapon_data = weapon_data or {}
+
+    if is_equipped then
+        _nui.show_weapon_hud()
+        local slot = weapon_data.group or "primary"
+
+        _nui.set_weapon_slot(slot, {
+            name = weapon_data.label or weapon_data.id,
+            image = weapon_data.id and ("nui://rig_inventory/images/%s.png"):format(weapon_data.id) or nil,
+            ammo_clip = tonumber(weapon_data.metadata and weapon_data.metadata.ammo) or 0,
+            ammo_reserve = 0
+        })
+        _nui.set_active_weapon_slot(slot)
+    else
+        _nui.hide_weapon_hud()
     end
 end)
 
@@ -70,5 +90,6 @@ RegisterCommand("togglehud", function()
         _nui.update_status_hud(build_hud_payload())
     else
         _nui.hide_status_hud()
+        _nui.hide_weapon_hud()
     end
 end)

@@ -42,14 +42,6 @@ export class WeaponHUD {
                         </div>
                     </div>
                 </div>
-                <div class="whud_inactive">
-                    <div class="whud_slot" id="whud_slot_secondary">
-                        <div class="whud_slot_image">${FALLBACK_ICONS.secondary}</div>
-                    </div>
-                    <div class="whud_slot" id="whud_slot_sidearm">
-                        <div class="whud_slot_image">${FALLBACK_ICONS.sidearm}</div>
-                    </div>
-                </div>
             </div>
         `)
         $('#ui_container').append(this.container)

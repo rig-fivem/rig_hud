@@ -23,3 +23,9 @@ end)
 AddEventHandler("rig:server:player_tick", function(source)
     TriggerClientEvent("rig_hud:client:update", source)
 end)
+
+--- @section RIG Inventory Events
+
+AddEventHandler("rig_inventory:server:weapon_state_changed", function(source, state, weapon_data)
+    TriggerClientEvent("rig_hud:client:weapon_state_changed", source, state, weapon_data)
+end)

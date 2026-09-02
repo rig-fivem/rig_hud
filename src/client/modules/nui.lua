@@ -74,6 +74,34 @@ function m.destroy_status_hud()
     SendNUIMessage({ func = "destroy_status_hud" })
 end
 
+--- @section Weapon HUD
+
+function m.show_weapon_hud()
+    SendNUIMessage({ func = "show_weapon_hud" })
+end
+
+function m.hide_weapon_hud()
+    SendNUIMessage({ func = "hide_weapon_hud" })
+end
+
+function m.set_weapon_slot(slot, weapon_data)
+    if not slot then return end
+    SendNUIMessage({ func = "set_weapon_slot", payload = { slot = slot, weapon_data = weapon_data } })
+end
+
+function m.set_active_weapon_slot(slot)
+    if not slot then return end
+    SendNUIMessage({ func = "set_active_weapon_slot", payload = { slot = slot } })
+end
+
+function m.update_weapon_ammo(clip, reserve)
+    SendNUIMessage({ func = "update_weapon_ammo", payload = { clip = clip, reserve = reserve } })
+end
+
+function m.destroy_weapon_hud()
+    SendNUIMessage({ func = "destroy_weapon_hud" })
+end
+
 --- @section Events
 
 RegisterNetEvent("rig:client:show_status_hud", function()
@@ -92,11 +120,42 @@ RegisterNetEvent("rig:client:destroy_status_hud", function()
     m.destroy_status_hud()
 end)
 
+RegisterNetEvent("rig:client:show_weapon_hud", function()
+    m.show_weapon_hud()
+end)
+
+RegisterNetEvent("rig:client:hide_weapon_hud", function()
+    m.hide_weapon_hud()
+end)
+
+RegisterNetEvent("rig:client:set_weapon_slot", function(slot, weapon_data)
+    m.set_weapon_slot(slot, weapon_data)
+end)
+
+RegisterNetEvent("rig:client:set_active_weapon_slot", function(slot)
+    m.set_active_weapon_slot(slot)
+end)
+
+RegisterNetEvent("rig:client:update_weapon_ammo", function(clip, reserve)
+    m.update_weapon_ammo(clip, reserve)
+end)
+
+RegisterNetEvent("rig:client:destroy_weapon_hud", function()
+    m.destroy_weapon_hud()
+end)
+
 --- @section Exports
 
 exports("show_status_hud", m.show_status_hud)
 exports("hide_status_hud", m.hide_status_hud)
 exports("update_status_hud", m.update_status_hud)
 exports("destroy_status_hud", m.destroy_status_hud)
+
+exports("show_weapon_hud", m.show_weapon_hud)
+exports("hide_weapon_hud", m.hide_weapon_hud)
+exports("set_weapon_slot", m.set_weapon_slot)
+exports("set_active_weapon_slot", m.set_active_weapon_slot)
+exports("update_weapon_ammo", m.update_weapon_ammo)
+exports("destroy_weapon_hud", m.destroy_weapon_hud)
 
 return m
