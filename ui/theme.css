@@ -72,18 +72,19 @@ License: https://github.com/rig-fivem/rig_hud/blob/main/LICENSE
     --icon_primary: #fff;
     --icon_secondary: #666;
 
-    /* Status HUD Colours */
-    --status_health: #b53232;
-    --status_armour: #0980f0;
-    --status_hunger: #e0a355;
-    --status_thirst: #55b8e0;
-    --status_stamina: #55e090;
-    --status_oxygen: #8055e0;
-    --status_temperature: #e07855;
-    --status_sanity: #c455e0;
-    --status_fatigue: #e05555;
-    --status_bleeding: #cc2222;
-    --status_radiation: #aacc22;
-    --status_infection: #55cc77;
-    --status_poison: #88cc22;
+    /* Status Colours */
+    --status_health: #ff3344;
+    --status_armour: #0099ff;
+    --status_hunger: #ff9933;
+    --status_thirst: #00ccff;
+    --status_stamina: #00ff66;
+    --status_oxygen: #9933ff;
+    --status_temperature: #ff5500;
+    --status_stress: #dd33ff;
+    --status_fatigue: #ff4444;
+    --status_bleeding: #ff0000;
+    --status_radiation: #ccff00;
+    --status_infection: #00ff88;
+    --status_poison: #88ff00;
+    --status_empty: #090909;
 }

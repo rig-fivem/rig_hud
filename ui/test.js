@@ -14,18 +14,18 @@ import { WeaponHUD } from "./js/weapon.js"
 const status_hud = new StatusHUD()
 
 status_hud.update({
-    health: 30,
+    health: 80,
     armour: 10,
-    hunger: 15,
-    thirst: 20,
-    stamina: 10,
-    oxygen: 10,
-    temperature: 37,
-    sanity: 60,
-    fatigue: 10,
-    bleeding: 75,
-    radiation: 30,
-    infection: 20,
+    hunger: 55,
+    thirst: 50,
+    stamina: 100,
+    oxygen: 100,
+    temperature: 100,
+    stress: 100,
+    fatigue: 100,
+    bleeding: 100,
+    radiation: 100,
+    infection: 100,
     poison: 100
 })
 

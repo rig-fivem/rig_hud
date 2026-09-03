@@ -30,7 +30,7 @@ local function build_hud_payload()
         thirst = statuses.thirst or 100,
         hygiene = statuses.hygiene or 100,
         fatigue = statuses.fatigue or 0,
-        sanity = statuses.sanity or 100,
+        stress = statuses.stress or 100,
         temperature = statuses.temperature or 37,
         bleeding = statuses.bleeding or 0,
         radiation = statuses.radiation or 0,

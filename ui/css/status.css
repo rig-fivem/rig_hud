@@ -15,7 +15,7 @@ License: https://github.com/rig-fivem/rig_hud/blob/main/LICENSE
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.4vh;
+    gap: 0.6vh;
     pointer-events: none;
     font-family: var(--header_font);
     z-index: 9999;
@@ -26,20 +26,34 @@ License: https://github.com/rig-fivem/rig_hud/blob/main/LICENSE
 
 .hud_conditions {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 1vh;
-    width: 3.1vw;
+    gap: 1.5vh;
+    width: 3vw;
     margin-bottom: 1vh;
 }
 
 .hud_condition_icon {
-    width: 2.5vh;
-    height: 2.5vh;
+    width: 2.75vh;
+    height: 2.75vh;
     opacity: 0.9;
     animation: condition_pulse 1.6s ease-in-out infinite;
-    filter: drop-shadow(0 0 3px currentColor);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.65));
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hud_condition_icon.is_empty {
+    opacity: 0.2;
+    animation: none;
+    filter: none;
+    color: var(--status_empty) !important;
+}
+
+.hud_condition_hidden {
+    display: none;
 }
 
 .hud_condition_icon svg { width: 100%; height: 100%; }
@@ -152,7 +166,7 @@ License: https://github.com/rig-fivem/rig_hud/blob/main/LICENSE
 }
 
 .hud_bar_fill.critical {
-    animation: bar_critical 0.55s ease-in-out infinite alternate;
+    animation: bar_critical 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes bar_critical {
