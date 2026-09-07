@@ -24,6 +24,26 @@ AddEventHandler("rig:server:player_tick", function(source)
     TriggerClientEvent("rig_hud:client:update", source)
 end)
 
+AddEventHandler("rig:server:player_downed", function(source)
+    TriggerClientEvent("rig_hud:client:toggle_display", source, false)
+end)
+
+AddEventHandler("rig:server:player_died", function(source)
+    TriggerClientEvent("rig_hud:client:toggle_display", source, false)
+end)
+
+AddEventHandler("rig:server:player_respawn_started", function(source)
+    TriggerClientEvent("rig_hud:client:toggle_display", source, false)
+end)
+
+AddEventHandler("rig:server:player_revived", function(source)
+    TriggerClientEvent("rig_hud:client:toggle_display", source, true)
+end)
+
+AddEventHandler("rig:server:player_respawned", function(source)
+    TriggerClientEvent("rig_hud:client:toggle_display", source, true)
+end)
+
 --- @section RIG Inventory Events
 
 AddEventHandler("rig_inventory:server:weapon_state_changed", function(source, state, weapon_data)

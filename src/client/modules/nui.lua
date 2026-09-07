@@ -57,7 +57,6 @@ function m.send_headshot()
 end
 
 function m.show_status_hud()
-    print("m.show_status_hud")
     SendNUIMessage({ func = "show_status_hud" })
 end
 
