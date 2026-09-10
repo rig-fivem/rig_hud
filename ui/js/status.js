@@ -34,15 +34,18 @@ const SVG_ICONS = {
     // thermometer
     temperature: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thermometer-icon lucide-thermometer"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
     // audio-lines
-    voice: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>`
+    voice: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>`,
+    // shower-head
+    hygiene: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shower-head"><path d="m4 4 2.5 2.5"/><path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"/><path d="M15 5 5 15"/><path d="M14 17v.01"/><path d="M10 16v.01"/><path d="M13 13v.01"/><path d="M16 10v.01"/><path d="M11 20v.01"/><path d="M17 14v.01"/><path d="M20 11v.01"/></svg>`
 }
 
 const CONDITIONS = {
     hunger: { threshold: 60, type: 'below', color: 'var(--status_hunger)' },
     thirst: { threshold: 60, type: 'below', color: 'var(--status_thirst)' },
     oxygen: { threshold: 75, type: 'below', color: 'var(--status_oxygen)' },
+    hygiene: { threshold: 75, type: 'below', color: 'var(--status_hygiene)' },
     stress: { threshold: 20, type: 'above', color: 'var(--status_stress)' },
-    fatigue: { threshold: 20, type: 'above', color: 'var(--status_fatigue)' },
+    fatigue: { threshold: 80, type: 'above', color: 'var(--status_fatigue)' },
     bleeding: { threshold: 5, type: 'above', color: 'var(--status_bleeding)' },
     radiation: { threshold: 5, type: 'above', color: 'var(--status_radiation)' },
     infection: { threshold: 5, type: 'above', color: 'var(--status_infection)' },
